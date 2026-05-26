@@ -9,21 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TrainingRouteImport } from './routes/training'
-import { Route as SpeakingRouteImport } from './routes/speaking'
+import { Route as VideosRouteImport } from './routes/videos'
+import { Route as LifeStoryRouteImport } from './routes/life-story'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ClinicsRouteImport } from './routes/clinics'
-import { Route as AboutRouteImport } from './routes/about'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as AchievementsRouteImport } from './routes/achievements'
 import { Route as IndexRouteImport } from './routes/index'
 
-const TrainingRoute = TrainingRouteImport.update({
-  id: '/training',
-  path: '/training',
+const VideosRoute = VideosRouteImport.update({
+  id: '/videos',
+  path: '/videos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SpeakingRoute = SpeakingRouteImport.update({
-  id: '/speaking',
-  path: '/speaking',
+const LifeStoryRoute = LifeStoryRouteImport.update({
+  id: '/life-story',
+  path: '/life-story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -31,14 +37,14 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ClinicsRoute = ClinicsRouteImport.update({
-  id: '/clinics',
-  path: '/clinics',
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const AchievementsRoute = AchievementsRouteImport.update({
+  id: '/achievements',
+  path: '/achievements',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -49,73 +55,93 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/clinics': typeof ClinicsRoute
+  '/achievements': typeof AchievementsRoute
+  '/book': typeof BookRoute
   '/contact': typeof ContactRoute
-  '/speaking': typeof SpeakingRoute
-  '/training': typeof TrainingRoute
+  '/gallery': typeof GalleryRoute
+  '/life-story': typeof LifeStoryRoute
+  '/videos': typeof VideosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/clinics': typeof ClinicsRoute
+  '/achievements': typeof AchievementsRoute
+  '/book': typeof BookRoute
   '/contact': typeof ContactRoute
-  '/speaking': typeof SpeakingRoute
-  '/training': typeof TrainingRoute
+  '/gallery': typeof GalleryRoute
+  '/life-story': typeof LifeStoryRoute
+  '/videos': typeof VideosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/clinics': typeof ClinicsRoute
+  '/achievements': typeof AchievementsRoute
+  '/book': typeof BookRoute
   '/contact': typeof ContactRoute
-  '/speaking': typeof SpeakingRoute
-  '/training': typeof TrainingRoute
+  '/gallery': typeof GalleryRoute
+  '/life-story': typeof LifeStoryRoute
+  '/videos': typeof VideosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
-    | '/clinics'
+    | '/achievements'
+    | '/book'
     | '/contact'
-    | '/speaking'
-    | '/training'
+    | '/gallery'
+    | '/life-story'
+    | '/videos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/clinics' | '/contact' | '/speaking' | '/training'
+  to:
+    | '/'
+    | '/achievements'
+    | '/book'
+    | '/contact'
+    | '/gallery'
+    | '/life-story'
+    | '/videos'
   id:
     | '__root__'
     | '/'
-    | '/about'
-    | '/clinics'
+    | '/achievements'
+    | '/book'
     | '/contact'
-    | '/speaking'
-    | '/training'
+    | '/gallery'
+    | '/life-story'
+    | '/videos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  ClinicsRoute: typeof ClinicsRoute
+  AchievementsRoute: typeof AchievementsRoute
+  BookRoute: typeof BookRoute
   ContactRoute: typeof ContactRoute
-  SpeakingRoute: typeof SpeakingRoute
-  TrainingRoute: typeof TrainingRoute
+  GalleryRoute: typeof GalleryRoute
+  LifeStoryRoute: typeof LifeStoryRoute
+  VideosRoute: typeof VideosRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/training': {
-      id: '/training'
-      path: '/training'
-      fullPath: '/training'
-      preLoaderRoute: typeof TrainingRouteImport
+    '/videos': {
+      id: '/videos'
+      path: '/videos'
+      fullPath: '/videos'
+      preLoaderRoute: typeof VideosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/speaking': {
-      id: '/speaking'
-      path: '/speaking'
-      fullPath: '/speaking'
-      preLoaderRoute: typeof SpeakingRouteImport
+    '/life-story': {
+      id: '/life-story'
+      path: '/life-story'
+      fullPath: '/life-story'
+      preLoaderRoute: typeof LifeStoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -125,18 +151,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/clinics': {
-      id: '/clinics'
-      path: '/clinics'
-      fullPath: '/clinics'
-      preLoaderRoute: typeof ClinicsRouteImport
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/achievements': {
+      id: '/achievements'
+      path: '/achievements'
+      fullPath: '/achievements'
+      preLoaderRoute: typeof AchievementsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -151,12 +177,23 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  ClinicsRoute: ClinicsRoute,
+  AchievementsRoute: AchievementsRoute,
+  BookRoute: BookRoute,
   ContactRoute: ContactRoute,
-  SpeakingRoute: SpeakingRoute,
-  TrainingRoute: TrainingRoute,
+  GalleryRoute: GalleryRoute,
+  LifeStoryRoute: LifeStoryRoute,
+  VideosRoute: VideosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

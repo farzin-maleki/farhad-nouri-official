@@ -1,20 +1,30 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowRight, Trophy, Image as ImageIcon, Play, Dumbbell, Calendar, BookOpen } from "lucide-react";
 import heroMat from "@/assets/hero-mat.jpg";
 import portrait from "@/assets/portrait.jpg";
 import action from "@/assets/action.jpg";
+import fitnessHero from "@/assets/fitness-hero.jpg";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Farhad Nouri — Iranian Wrestler" },
-      { name: "description", content: "Strength, discipline, legacy. The official site of Iranian wrestler Farhad Nouri." },
+      { title: "Farhad Nouri — Wrestler & Fitness Athlete" },
+      { name: "description", content: "Official site of Farhad Nouri, professional wrestler and fitness athlete. Train with a champion." },
     ],
   }),
   component: Index,
 });
+
+const previews = [
+  { to: "/life-story", label: "Life Story", desc: "From a small mat in Tehran to international podiums.", icon: BookOpen, img: portrait },
+  { to: "/achievements", label: "Achievements", desc: "Medals, titles and milestones across two disciplines.", icon: Trophy, img: action },
+  { to: "/gallery", label: "Gallery", desc: "Cinematic moments from competitions and training.", icon: ImageIcon, img: heroMat },
+  { to: "/videos", label: "Videos", desc: "Match highlights, workouts and behind the scenes.", icon: Play, img: fitnessHero },
+  { to: "/book", label: "Book a Session", desc: "Train with me — wrestling or fitness, one-on-one.", icon: Calendar, img: fitnessHero },
+  { to: "/contact", label: "Contact", desc: "For media, sponsorships and collaborations.", icon: Dumbbell, img: action },
+] as const;
 
 function Index() {
   return (
@@ -22,150 +32,96 @@ function Index() {
       <SiteNav />
 
       {/* HERO */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <img src={heroMat} alt="Wrestler standing on the mat" width={1920} height={1080} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background/80" />
+      <section className="relative h-screen min-h-[700px] w-full overflow-hidden">
+        <img src={heroMat} alt="Farhad Nouri" width={1920} height={1080} className="absolute inset-0 h-full w-full object-cover scale-105" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
+        <div className="absolute inset-0 bg-gradient-radial opacity-40 mix-blend-multiply" />
+        {/* particles */}
+        <div className="absolute inset-0 pointer-events-none">
+          {Array.from({ length: 14 }).map((_, i) => (
+            <span
+              key={i}
+              className="absolute h-1 w-1 rounded-full bg-accent/60"
+              style={{
+                top: `${(i * 37) % 100}%`,
+                left: `${(i * 53) % 100}%`,
+                animation: `float-particle ${6 + (i % 5)}s ease-in-out ${i * 0.4}s infinite`,
+              }}
+            />
+          ))}
+        </div>
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-          <h1 className="font-script text-6xl md:text-8xl text-accent drop-shadow-lg">Pahlevani</h1>
-          <p className="mt-4 text-xl md:text-2xl font-serif italic">I rise with honor</p>
-          <p className="mt-3 text-sm md:text-base tracking-[0.2em] uppercase text-muted-foreground">Forged on the mat. Carried by tradition.</p>
-          <a href="#story" className="absolute bottom-12 animate-bounce text-accent">
-            <ArrowDown className="h-6 w-6" />
-          </a>
-        </div>
-      </section>
-
-      {/* PRESS STRIP */}
-      <section className="border-y border-border bg-card py-10">
-        <div className="mx-auto max-w-6xl px-6">
-          <p className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6">As featured by</p>
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 text-muted-foreground/80 font-serif text-lg">
-            <span>United World Wrestling</span>
-            <span>·</span>
-            <span>IRIB Sport</span>
-            <span>·</span>
-            <span>Tehran Times</span>
-            <span>·</span>
-            <span>FloWrestling</span>
-            <span>·</span>
-            <span>Varzesh3</span>
-          </div>
-        </div>
-      </section>
-
-      {/* STORY */}
-      <section id="story" className="py-28 px-6">
-        <div className="mx-auto grid max-w-6xl gap-16 md:grid-cols-2 items-center">
-          <div className="relative">
-            <img src={portrait} alt="Farhad Nouri portrait" width={1024} height={1024} loading="lazy" className="w-full object-cover aspect-[4/5]" />
-            <div className="absolute -bottom-4 -right-4 border border-accent p-4 bg-background hidden md:block">
-              <p className="font-script text-2xl text-accent">Farhad Nouri</p>
-            </div>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">The Athlete</p>
-            <h2 className="text-5xl md:text-6xl font-serif mb-6">Farhad Nouri</h2>
-            <p className="text-xl font-serif italic text-muted-foreground mb-6">National Champion. Freestyle Wrestler. Mentor.</p>
-            <p className="text-lg leading-relaxed mb-4">
-              From the wrestling halls of Iran to international podiums, the mat has shaped every part of who I am.
-            </p>
-            <p className="leading-relaxed text-muted-foreground mb-8">
-              After years of training, competing, and representing my country, I'm now focused on passing down what I've learned — on the mat and beyond. Through private coaching, team clinics, and speaking, I aim to create space for growth, discipline, and lasting impact.
-            </p>
-            <Link to="/about" className="inline-flex items-center gap-2 text-accent border-b border-accent pb-1 hover:gap-4 transition-all">
-              My Story <ArrowRight className="h-4 w-4" />
+          <p className="font-display tracking-[0.5em] text-xs text-accent mb-6 animate-fade-in">WRESTLER · FITNESS ATHLETE</p>
+          <h1 className="font-display text-6xl sm:text-8xl md:text-9xl leading-none animate-fade-up">
+            <span className="block text-foreground">FARHAD</span>
+            <span className="block text-gradient-gold">NOURI</span>
+          </h1>
+          <p className="mt-8 max-w-xl text-lg md:text-xl text-muted-foreground font-serif italic animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            "Strength is not given. It is forged — one round, one rep, one day at a time."
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+            <Link to="/book" className="group inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-4 text-sm font-display tracking-[0.25em] uppercase hover:bg-accent/90 transition-all">
+              Book a Session <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <p className="mt-10 text-sm text-muted-foreground"><span className="text-accent font-medium">Fun fact:</span> I drink chai before every match — tradition included.</p>
+            <Link to="/life-story" className="group inline-flex items-center gap-3 border border-accent text-accent px-8 py-4 text-sm font-display tracking-[0.25em] uppercase hover:bg-accent hover:text-accent-foreground transition-all">
+              My Story <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* WORK WITH ME */}
-      <section className="bg-card py-28 px-6">
+      {/* STATS */}
+      <section className="border-y border-border bg-card/40 py-10">
+        <div className="mx-auto max-w-6xl px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            { v: "15+", l: "Years on the mat" },
+            { v: "30+", l: "Medals" },
+            { v: "2", l: "Disciplines" },
+            { v: "100s", l: "Athletes coached" },
+          ].map((s) => (
+            <div key={s.l}>
+              <p className="font-display text-4xl md:text-5xl text-gradient-gold">{s.v}</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-2">{s.l}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PREVIEW GRID */}
+      <section className="py-28 px-6">
         <div className="mx-auto max-w-6xl">
-          <div className="flex items-end justify-between flex-wrap gap-6 mb-16">
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-3">Work With Me</p>
-              <h2 className="text-5xl md:text-6xl font-serif">What I offer</h2>
-            </div>
-            <Link to="/contact" className="inline-flex items-center gap-2 border border-accent text-accent px-6 py-3 text-sm uppercase tracking-[0.2em] hover:bg-accent hover:text-accent-foreground transition-colors">
-              Get in touch <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="grid gap-px bg-border md:grid-cols-3">
-            {[
-              { title: "Private Training", to: "/training", desc: "One-on-one coaching tailored to your level. Technique, conditioning, mindset, and competition strategy." },
-              { title: "Wrestling Clinics", to: "/clinics", desc: "I work with teams and clubs — drilling, live wrestling, and Q&A. For schools and programs chasing an edge." },
-              { title: "Speaking", to: "/speaking", desc: "From student-athletes to corporate teams: resilience, pressure, identity, and chasing big goals." },
-            ].map((s) => (
-              <Link key={s.title} to={s.to} className="group bg-background p-10 hover:bg-secondary transition-colors">
-                <h3 className="text-2xl font-serif mb-4">{s.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-8">{s.desc}</p>
-                <span className="inline-flex items-center gap-2 text-accent text-sm uppercase tracking-[0.2em]">
-                  Learn more <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </span>
+          <p className="text-xs uppercase tracking-[0.3em] text-accent text-center mb-4">Explore</p>
+          <h2 className="font-display text-5xl md:text-6xl text-center mb-16">THE JOURNEY</h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {previews.map((p) => (
+              <Link key={p.to} to={p.to} className="group relative overflow-hidden border border-border bg-card aspect-[4/5]">
+                <img src={p.img} alt={p.label} width={800} height={1000} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <p.icon className="h-8 w-8 text-accent mb-4" />
+                  <h3 className="font-display text-2xl md:text-3xl mb-2">{p.label.toUpperCase()}</h3>
+                  <p className="text-sm text-muted-foreground mb-3">{p.desc}</p>
+                  <span className="inline-flex items-center gap-2 text-accent text-xs uppercase tracking-[0.25em]">
+                    Discover <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* BIO */}
-      <section className="py-28 px-6">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-3 text-center">Athlete Bio</p>
-          <h2 className="text-5xl md:text-6xl font-serif text-center mb-16">By the numbers</h2>
-          <div className="grid gap-12 md:grid-cols-4 text-center">
-            {[
-              { label: "Weight Class", value: "86 kg" },
-              { label: "Hometown", value: "Tehran, Iran" },
-              { label: "Style", value: "Freestyle" },
-              { label: "Training Base", value: "Tehran" },
-            ].map((b) => (
-              <div key={b.label}>
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-3">{b.label}</p>
-                <p className="text-3xl font-serif">{b.value}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-20 grid gap-12 md:grid-cols-2">
-            <div>
-              <h3 className="text-2xl font-serif mb-6 text-accent">Career Highlights</h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li>— Multiple-time Iranian National Champion</li>
-                <li>— International medalist on the freestyle circuit</li>
-                <li>— Member of Team Melli (Iran National Team)</li>
-                <li>— Continental tournament podium finisher</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-2xl font-serif mb-6 text-accent">Philosophy</h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li>— Pahlevani values: humility, courage, and honor</li>
-                <li>— Daily discipline over occasional intensity</li>
-                <li>— The mat reveals who you really are</li>
-                <li>— Mentor the next generation</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* IN ACTION */}
-      <section className="bg-card py-28 px-6">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-3 text-center">In Action</p>
-          <h2 className="text-5xl md:text-6xl font-serif text-center mb-16">Performance Highlights</h2>
-          <a href="#" className="block relative group overflow-hidden">
-            <img src={action} alt="Farhad Nouri in competition" width={1600} height={900} loading="lazy" className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition-colors flex items-center justify-center">
-              <div className="h-20 w-20 rounded-full border-2 border-accent bg-background/40 backdrop-blur-sm flex items-center justify-center">
-                <div className="ml-1 h-0 w-0 border-y-[10px] border-y-transparent border-l-[16px] border-l-accent" />
-              </div>
-            </div>
-          </a>
-          <p className="text-center mt-6 text-sm uppercase tracking-[0.2em] text-muted-foreground">Match reel — coming soon</p>
+      {/* CTA STRIP */}
+      <section className="relative py-28 px-6 overflow-hidden">
+        <img src={fitnessHero} alt="Train" width={1920} height={1080} loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
+        <div className="relative max-w-3xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">Train With Me</p>
+          <h2 className="font-display text-5xl md:text-6xl mb-6">READY TO LEVEL UP?</h2>
+          <p className="text-muted-foreground mb-10 text-lg">One-on-one wrestling technique or pure strength &amp; conditioning. Pick a path. Show up. Transform.</p>
+          <Link to="/book" className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-10 py-5 font-display tracking-[0.25em] uppercase text-sm hover:bg-accent/90 transition-all">
+            Book a Session <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 
