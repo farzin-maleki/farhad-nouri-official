@@ -3,12 +3,15 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroMat from "@/assets/hero-mat.jpg";
-import portrait from "@/assets/portrait.jpg";
-import action from "@/assets/action.jpg";
-import fitnessHero from "@/assets/fitness-hero.jpg";
-import wrestlerSpotlight from "@/assets/wrestler-spotlight.jpg";
-import medals from "@/assets/medals.jpg";
+import zagrebMat from "@/assets/gallery/zagreb-mat.png";
+import zagrebWin from "@/assets/gallery/zagreb-win.png";
+import zexPoster from "@/assets/gallery/zex-poster.png";
+import mirror from "@/assets/gallery/mirror-physique.png";
+import blueWin from "@/assets/gallery/blue-win-ukraine.jpg";
+import diploma from "@/assets/gallery/euro-diploma.jpg";
+import redFist from "@/assets/gallery/red-fist.jpg";
+import tirana from "@/assets/gallery/tirana-win.jpg";
+import armRaised from "@/assets/gallery/arm-raised.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -23,18 +26,15 @@ export const Route = createFileRoute("/gallery")({
 type Photo = { src: string; alt: string; cat: "wrestling" | "fitness" };
 
 const photos: Photo[] = [
-  { src: heroMat, alt: "On the mat", cat: "wrestling" },
-  { src: wrestlerSpotlight, alt: "Spotlight kneel", cat: "wrestling" },
-  { src: action, alt: "In action", cat: "wrestling" },
-  { src: portrait, alt: "Portrait", cat: "wrestling" },
-  { src: fitnessHero, alt: "Gym session", cat: "fitness" },
-  { src: medals, alt: "Medals", cat: "fitness" },
-  { src: fitnessHero, alt: "Lifting heavy", cat: "fitness" },
-  { src: heroMat, alt: "Tournament", cat: "wrestling" },
-  { src: action, alt: "Hand raised", cat: "wrestling" },
-  { src: fitnessHero, alt: "Conditioning", cat: "fitness" },
-  { src: wrestlerSpotlight, alt: "Arena", cat: "wrestling" },
-  { src: medals, alt: "Champion", cat: "fitness" },
+  { src: zexPoster, alt: "ZEX poster", cat: "wrestling" },
+  { src: zagrebMat, alt: "Zagreb Open — on the mat", cat: "wrestling" },
+  { src: zagrebWin, alt: "Zagreb 2026 — 10-0 win vs CAN", cat: "wrestling" },
+  { src: redFist, alt: "Red singlet, fist clenched", cat: "wrestling" },
+  { src: armRaised, alt: "Arm raised in victory", cat: "wrestling" },
+  { src: tirana, alt: "Tirana European Championships", cat: "wrestling" },
+  { src: blueWin, alt: "Win over Ukraine — blue singlet", cat: "wrestling" },
+  { src: diploma, alt: "European Championships bronze — Tirana '26", cat: "wrestling" },
+  { src: mirror, alt: "Physique check", cat: "fitness" },
 ];
 
 function Gallery() {
@@ -72,12 +72,8 @@ function Gallery() {
                   <img
                     src={p.src}
                     alt={p.alt}
-                    width={800}
-                    height={1000}
                     loading="lazy"
-                    className={`w-full object-cover transition-transform duration-500 group-hover:scale-105 ${
-                      i % 3 === 0 ? "aspect-[3/4]" : i % 3 === 1 ? "aspect-square" : "aspect-[4/5]"
-                    }`}
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </button>
               ))}

@@ -3,8 +3,8 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import portrait from "@/assets/portrait.jpg";
 import action from "@/assets/action.jpg";
-import wrestlerSpotlight from "@/assets/wrestler-spotlight.jpg";
 import fitnessHero from "@/assets/fitness-hero.jpg";
+import wrestlerSpotlight from "@/assets/gallery/zex-poster.png";
 
 export const Route = createFileRoute("/life-story")({
   head: () => ({
