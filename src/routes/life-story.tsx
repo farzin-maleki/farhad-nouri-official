@@ -33,7 +33,7 @@ function LifeStory() {
       {/* Hero */}
       <section className="relative h-[85vh] min-h-[600px] overflow-hidden">
         <img src={wrestlerSpotlight} alt="Farhad Nouri spotlight" width={1080} height={1920} className="absolute inset-0 h-full w-full object-cover object-top" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/10 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/10 to-black" />
         <div className="absolute inset-0 flex flex-col items-center justify-end pb-20 text-center px-6">
           <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6 animate-fade-in">My Journey</p>
           <h1 className="font-display text-6xl md:text-8xl text-gradient-gold animate-fade-up">LIFE STORY</h1>
