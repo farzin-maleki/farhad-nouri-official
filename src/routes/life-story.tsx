@@ -31,10 +31,10 @@ function LifeStory() {
     <div>
       <SiteNav />
       {/* Hero */}
-      <section className="relative h-[70vh] min-h-[500px] overflow-hidden">
-        <img src={wrestlerSpotlight} alt="Farhad Nouri spotlight" width={1080} height={1920} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+      <section className="relative h-[85vh] min-h-[600px] overflow-hidden">
+        <img src={wrestlerSpotlight} alt="Farhad Nouri spotlight" width={1080} height={1920} className="absolute inset-0 h-full w-full object-cover object-top" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/10 to-background/80" />
+        <div className="absolute inset-0 flex flex-col items-center justify-end pb-20 text-center px-6">
           <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6 animate-fade-in">My Journey</p>
           <h1 className="font-display text-6xl md:text-8xl text-gradient-gold animate-fade-up">LIFE STORY</h1>
           <p className="mt-6 max-w-xl text-muted-foreground font-serif italic text-lg animate-fade-up">A boy. A mat. A relentless will to rise.</p>
