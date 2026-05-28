@@ -17,8 +17,8 @@ const offers = [
   {
     icon: Dumbbell,
     title: "Fitness Session",
-    price: "$120",
-    duration: "60 minutes",
+    price: "£100",
+    duration: "90 minutes",
     desc: "Strength, hypertrophy, conditioning, and competition prep. Built around your goals and biomechanics.",
     bullets: [
       "Full body assessment",
@@ -31,8 +31,8 @@ const offers = [
   {
     icon: Swords,
     title: "Wrestling Session",
-    price: "$150",
-    duration: "75 minutes",
+    price: "£100",
+    duration: "90 minutes",
     desc: "Technique, drills, live wrestling, and competition strategy from a national-level competitor.",
     bullets: [
       "Stance, motion and level changes",
