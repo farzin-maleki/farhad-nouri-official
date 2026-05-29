@@ -11,7 +11,10 @@ import {
 import heroMat from "@/assets/hero-mat.jpg";
 import portrait from "@/assets/gallery/arm-raised.jpg";
 import action from "@/assets/gallery/euro-diploma.jpg";
-import contact from "@/assets/gallery/blue-win-ukraine.jpg";
+import contactPre from "@/assets/gallery/blue-win-ukraine.jpg";
+import galleryPre from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.12.19.jpeg";
+import videosPre from "@/assets/gallery/tirana-win.jpg";
+import bookingPre from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.12.19.jpeg";
 import fitnessHero from "@/assets/fitness-hero.jpg";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -50,28 +53,28 @@ const previews = [
     label: "Gallery",
     desc: "Cinematic moments from competitions and training.",
     icon: ImageIcon,
-    img: heroMat,
+    img: galleryPre,
   },
   {
     to: "/videos",
     label: "Videos",
     desc: "Match highlights, workouts and behind the scenes.",
     icon: Play,
-    img: fitnessHero,
+    img: videosPre,
   },
   {
     to: "/book",
     label: "Book a Session",
     desc: "Train with me — wrestling or fitness, one-on-one.",
     icon: Calendar,
-    img: fitnessHero,
+    img: bookingPre,
   },
   {
     to: "/contact",
     label: "Contact",
     desc: "For media, sponsorships and collaborations.",
     icon: Dumbbell,
-    img: contact,
+    img: contactPre,
   },
 ] as const;
 
