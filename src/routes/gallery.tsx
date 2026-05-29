@@ -17,7 +17,10 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Gallery — Farhad Nouri" },
-      { name: "description", content: "Cinematic photo gallery from wrestling and fitness competitions." },
+      {
+        name: "description",
+        content: "Cinematic photo gallery from wrestling and fitness competitions.",
+      },
     ],
   }),
   component: Gallery,
@@ -26,7 +29,6 @@ export const Route = createFileRoute("/gallery")({
 type Photo = { src: string; alt: string; cat: "wrestling" | "fitness" };
 
 const photos: Photo[] = [
-  { src: zexPoster, alt: "ZEX poster", cat: "wrestling" },
   { src: zagrebMat, alt: "Zagreb Open — on the mat", cat: "wrestling" },
   { src: zagrebWin, alt: "Zagreb 2026 — 10-0 win vs CAN", cat: "wrestling" },
   { src: redFist, alt: "Red singlet, fist clenched", cat: "wrestling" },
@@ -48,7 +50,9 @@ function Gallery() {
       <section className="pt-40 pb-16 px-6 text-center">
         <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">Visuals</p>
         <h1 className="font-display text-6xl md:text-8xl text-gradient-gold">GALLERY</h1>
-        <p className="mt-4 text-muted-foreground font-serif italic text-lg">Moments captured in motion.</p>
+        <p className="mt-4 text-muted-foreground font-serif italic text-lg">
+          Moments captured in motion.
+        </p>
       </section>
 
       {[
@@ -60,7 +64,9 @@ function Gallery() {
             <div className="flex items-center gap-6 mb-10">
               <h2 className="font-display text-3xl md:text-4xl">{sec.title.toUpperCase()}</h2>
               <div className="flex-1 h-px bg-border" />
-              <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground">{sec.list.length} photos</span>
+              <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                {sec.list.length} photos
+              </span>
             </div>
             <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
               {sec.list.map((p, i) => (

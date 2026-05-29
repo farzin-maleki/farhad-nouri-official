@@ -23,9 +23,8 @@ export function SiteFooter() {
         <div>
           <h4 className="uppercase tracking-[0.25em] text-xs text-accent mb-4 font-display">Connect</h4>
           <div className="flex gap-4">
-            <a href="#" aria-label="Instagram" className="hover:text-accent transition-colors"><Instagram className="h-5 w-5" /></a>
-            <a href="#" aria-label="YouTube" className="hover:text-accent transition-colors"><Youtube className="h-5 w-5" /></a>
-            <a href="mailto:hello@farhadnouri.com" aria-label="Email" className="hover:text-accent transition-colors"><Mail className="h-5 w-5" /></a>
+            <a href="https://www.instagram.com/farhad.nourri" aria-label="Instagram" className="hover:text-accent transition-colors"><Instagram className="h-5 w-5" /></a>
+            <a href="mailto:farhadnourilo74@gmail.com" aria-label="Email" className="hover:text-accent transition-colors"><Mail className="h-5 w-5" /></a>
           </div>
           <p className="mt-6 text-xs text-muted-foreground">© {new Date().getFullYear()} Farhad Nouri. All rights reserved.</p>
         </div>

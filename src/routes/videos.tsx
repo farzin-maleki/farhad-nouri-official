@@ -8,7 +8,10 @@ export const Route = createFileRoute("/videos")({
   head: () => ({
     meta: [
       { title: "Videos — Farhad Nouri" },
-      { name: "description", content: "Match highlights, training videos, and behind-the-scenes content." },
+      {
+        name: "description",
+        content: "Match highlights, training videos, and behind-the-scenes content.",
+      },
     ],
   }),
   component: Videos,
@@ -17,12 +20,13 @@ export const Route = createFileRoute("/videos")({
 // Placeholder IDs — replace with real YouTube IDs when provided
 type Vid = { id: string; title: string; cat: "wrestling" | "fitness" };
 const videos: Vid[] = [
-  { id: "dQw4w9WgXcQ", title: "National Final — 86 kg", cat: "wrestling" },
-  { id: "dQw4w9WgXcQ", title: "Best Throws Compilation", cat: "wrestling" },
-  { id: "dQw4w9WgXcQ", title: "Training Camp Diary", cat: "wrestling" },
-  { id: "dQw4w9WgXcQ", title: "Full Push Day Workout", cat: "fitness" },
-  { id: "dQw4w9WgXcQ", title: "Cutting Routine Explained", cat: "fitness" },
-  { id: "dQw4w9WgXcQ", title: "Stage Prep — Week 4", cat: "fitness" },
+  { id: "B1uOv7vCK_U", title: "Final English Senior Championships 2022", cat: "wrestling" },
+  { id: "PZ7PqcXhdKw", title: "U23 Asian Championships", cat: "wrestling" },
+  { id: "MbpbU8RW7IM", title: "English Campionships 2023", cat: "wrestling" },
+  { id: "Q-RsH4RMfP4", title: "", cat: "wrestling" },
+  { id: "E3x9joC8GfU", title: "Full Push Day Workout", cat: "fitness" },
+  { id: "OqWcS_xBCHk", title: "", cat: "fitness" },
+  { id: "jQ3V5YazKS8", title: "Stage Prep — Week 4", cat: "fitness" },
 ];
 
 function Videos() {
@@ -36,7 +40,9 @@ function Videos() {
       <section className="pt-40 pb-12 px-6 text-center">
         <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">Watch</p>
         <h1 className="font-display text-6xl md:text-8xl text-gradient-gold">VIDEOS</h1>
-        <p className="mt-4 text-muted-foreground font-serif italic text-lg">Highlights, workouts and behind the scenes.</p>
+        <p className="mt-4 text-muted-foreground font-serif italic text-lg">
+          Highlights, workouts and behind the scenes.
+        </p>
       </section>
 
       <section className="px-6 pb-20">
@@ -45,7 +51,10 @@ function Videos() {
             {(["all", "wrestling", "fitness"] as const).map((f) => (
               <button
                 key={f}
-                onClick={() => { setFilter(f); setPlaying(null); }}
+                onClick={() => {
+                  setFilter(f);
+                  setPlaying(null);
+                }}
                 className={`px-6 py-3 text-xs uppercase tracking-[0.25em] font-display border transition-all ${
                   filter === f
                     ? "bg-accent text-accent-foreground border-accent"
@@ -86,14 +95,19 @@ function Videos() {
                         />
                         <div className="absolute inset-0 bg-background/40 flex items-center justify-center group-hover/play:bg-background/20 transition-colors">
                           <div className="h-16 w-16 rounded-full bg-accent flex items-center justify-center">
-                            <Play className="h-6 w-6 text-accent-foreground ml-1" fill="currentColor" />
+                            <Play
+                              className="h-6 w-6 text-accent-foreground ml-1"
+                              fill="currentColor"
+                            />
                           </div>
                         </div>
                       </button>
                     )}
                   </div>
                   <div className="p-5">
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-accent mb-2">{v.cat}</p>
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-accent mb-2">
+                      {v.cat}
+                    </p>
                     <h3 className="font-display text-lg">{v.title.toUpperCase()}</h3>
                   </div>
                 </div>
