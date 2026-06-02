@@ -14,8 +14,8 @@ import action from "@/assets/gallery/euro-diploma.jpg";
 import contactPre from "@/assets/gallery/blue-win-ukraine.jpg";
 import galleryPre from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.12.19.jpeg";
 import videosPre from "@/assets/gallery/tirana-win.jpg";
-import bookingPre from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.12.19.jpeg";
-import fitnessHero from "@/assets/fitness-hero.jpg";
+import bookingPre from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.12.19ss.jpeg";
+import fitnessHero from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.21.5ss1.jpeg";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 
