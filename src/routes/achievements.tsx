@@ -29,6 +29,42 @@ type Item = {
 const items: Item[] = [
   {
     category: "wrestling",
+    year: 2026,
+    comp: "European Championship Bronze Medalist",
+    position: "bronze",
+    location: "Tirana, Albania",
+  },
+  {
+    category: "wrestling",
+    year: 2019,
+    comp: " Asian U23 Championships",
+    position: "silver",
+    location: "Ulaanbaatar, Mongolia",
+  },
+
+  {
+    category: "wrestling",
+    year: 2025,
+    comp: "British Senior Wrestling Championships",
+    position: "gold",
+    location: "UK",
+  },
+  {
+    category: "wrestling",
+    year: 2024,
+    comp: "British Senior Wrestling Championships",
+    position: "gold",
+    location: "Manchester, England",
+  },
+  {
+    category: "wrestling",
+    year: 2023,
+    comp: "British Senior Wrestling Champion",
+    position: "gold",
+    location: "UK",
+  },
+  {
+    category: "wrestling",
     year: 2022,
     comp: "English Senior Wrestling Champion",
     position: "gold",
@@ -40,13 +76,6 @@ const items: Item[] = [
     comp: "Asian Cup — 86 kg",
     position: "silver",
     location: "Bishkek, KGZ",
-  },
-  {
-    category: "wrestling",
-    year: 2022,
-    comp: "International Open",
-    position: "gold",
-    location: "Istanbul, TUR",
   },
   {
     category: "wrestling",
@@ -68,34 +97,6 @@ const items: Item[] = [
     comp: "International Debut Tournament",
     position: "silver",
     location: "Doha, QAT",
-  },
-  {
-    category: "fitness",
-    year: 2024,
-    comp: "Mr. Tehran Classic Physique",
-    position: "gold",
-    location: "Tehran, Iran",
-  },
-  {
-    category: "fitness",
-    year: 2023,
-    comp: "Middle East Pro Qualifier",
-    position: "silver",
-    location: "Dubai, UAE",
-  },
-  {
-    category: "fitness",
-    year: 2022,
-    comp: "National Bodybuilding Open",
-    position: "bronze",
-    location: "Tehran, Iran",
-  },
-  {
-    category: "fitness",
-    year: 2021,
-    comp: "Regional Physique Cup",
-    position: "gold",
-    location: "Shiraz, Iran",
   },
 ];
 

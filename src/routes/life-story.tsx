@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import kidPic from "@/assets/gallery/WhatsApp Image 2026-05-29 at 15.03.06.jpeg";
 import portrait from "@/assets/hero-mat.jpg";
 import action from "@/assets/hero-mat.jpg";
 import fitnessHero from "@/assets/hero-mat.jpg";
-import wrestlerSpotlight from "@/assets/hero-mat.jpg";
+import wrestlerSpotlight from "@/assets/gallery/image_2026-05-27_13-54-58.png";
 
 export const Route = createFileRoute("/life-story")({
   head: () => ({
@@ -24,7 +25,8 @@ const timeline = [
   {
     year: "2008",
     title: "First Steps on the Mat",
-    text: "At eight years old, walked into a local wrestling club in Tehran. The smell of the mat never left.",
+    text: "At ten years old, walked into a local wrestling club in Tehran. The smell of the mat never left.",
+    img: kidPic,
   },
   {
     year: "2012",

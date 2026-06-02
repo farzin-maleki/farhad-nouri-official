@@ -20,7 +20,11 @@ export const Route = createFileRoute("/videos")({
 // Placeholder IDs — replace with real YouTube IDs when provided
 type Vid = { id: string; title: string; cat: "wrestling" | "fitness" };
 const videos: Vid[] = [
-  { id: "B1uOv7vCK_U", title: "Final English Senior Championships 2022", cat: "wrestling" },
+  {
+    id: "B1uOv7vCK_U",
+    title: "2022 English Senior Wrestling Championships Final",
+    cat: "wrestling",
+  },
   { id: "PZ7PqcXhdKw", title: "U23 Asian Championships", cat: "wrestling" },
   { id: "MbpbU8RW7IM", title: "English Campionships 2023", cat: "wrestling" },
   { id: "Q-RsH4RMfP4", title: "", cat: "wrestling" },
