@@ -28,9 +28,9 @@ const videos: Vid[] = [
   { id: "PZ7PqcXhdKw", title: "U23 Asian Championships", cat: "wrestling" },
   { id: "MbpbU8RW7IM", title: "English Campionships 2023", cat: "wrestling" },
   { id: "Q-RsH4RMfP4", title: "", cat: "wrestling" },
+  { id: "RQ_3Ue81tTo", title: "", cat: "wrestling" },
   { id: "E3x9joC8GfU", title: "Full Push Day Workout", cat: "fitness" },
   { id: "OqWcS_xBCHk", title: "", cat: "fitness" },
-  { id: "jQ3V5YazKS8", title: "Stage Prep — Week 4", cat: "fitness" },
 ];
 
 function Videos() {

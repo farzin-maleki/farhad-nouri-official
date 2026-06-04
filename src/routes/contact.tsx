@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Instagram, Youtube, Mail, MapPin } from "lucide-react";
+import { Instagram, Mail, MapPin } from "lucide-react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -17,6 +19,24 @@ export const Route = createFileRoute("/contact")({
 });
 
 function Contact() {
+  const formRef = useRef();
+  const [status, setStatus] = useState("idle");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    emailjs
+      .sendForm("service_0cwl32a", "template_im24h2g", formRef.current, "Z8axz6ldj_pdHR2Zc")
+      .then(() => {
+        setStatus("success");
+        formRef.current.reset();
+      })
+      .catch(() => {
+        setStatus("error");
+      });
+  };
+
   return (
     <div>
       <SiteNav />
@@ -31,13 +51,7 @@ function Contact() {
       <section className="px-6 pb-28">
         <div className="mx-auto max-w-5xl grid gap-12 md:grid-cols-5">
           {/* Form */}
-          <form
-            className="md:col-span-3 space-y-6"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Thanks — I'll be in touch soon.");
-            }}
-          >
+          <form ref={formRef} onSubmit={handleSubmit} className="md:col-span-3 space-y-6">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
                 <label className="block text-xs uppercase tracking-[0.25em] text-muted-foreground mb-2 font-display">
@@ -46,6 +60,7 @@ function Contact() {
                 <input
                   required
                   type="text"
+                  name="name"
                   className="w-full bg-card border border-border px-4 py-3 focus:outline-none focus:border-accent transition-colors"
                 />
               </div>
@@ -56,6 +71,7 @@ function Contact() {
                 <input
                   required
                   type="email"
+                  name="email"
                   className="w-full bg-card border border-border px-4 py-3 focus:outline-none focus:border-accent transition-colors"
                 />
               </div>
@@ -66,6 +82,7 @@ function Contact() {
               </label>
               <input
                 type="text"
+                name="subject"
                 className="w-full bg-card border border-border px-4 py-3 focus:outline-none focus:border-accent transition-colors"
               />
             </div>
@@ -76,15 +93,29 @@ function Contact() {
               <textarea
                 required
                 rows={6}
+                name="message"
                 className="w-full bg-card border border-border px-4 py-3 focus:outline-none focus:border-accent transition-colors"
               />
             </div>
+
             <button
               type="submit"
-              className="w-full bg-accent text-accent-foreground py-4 font-display uppercase tracking-[0.25em] text-sm hover:bg-accent/90 transition-colors"
+              disabled={status === "sending"}
+              className="w-full bg-accent text-accent-foreground py-4 font-display uppercase tracking-[0.25em] text-sm hover:bg-accent/90 transition-colors disabled:opacity-50"
             >
-              Send Message
+              {status === "sending" ? "Sending..." : "Send Message"}
             </button>
+
+            {status === "success" && (
+              <p className="text-center text-sm text-green-500 tracking-wide">
+                ✅ Message sent! I'll be in touch soon.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-center text-sm text-red-500 tracking-wide">
+                ❌ Something went wrong. Please try again.
+              </p>
+            )}
           </form>
 
           {/* Side info */}
