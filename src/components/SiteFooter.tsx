@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import { Instagram, Youtube, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Instagram, Mail } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -16,36 +16,12 @@ export function SiteFooter() {
             Explore
           </h4>
           <ul className="space-y-2 text-muted-foreground">
-            <li>
-              <Link to="/life-story" className="hover:text-accent">
-                Life Story
-              </Link>
-            </li>
-            <li>
-              <Link to="/achievements" className="hover:text-accent">
-                Achievements
-              </Link>
-            </li>
-            <li>
-              <Link to="/gallery" className="hover:text-accent">
-                Gallery
-              </Link>
-            </li>
-            <li>
-              <Link to="/videos" className="hover:text-accent">
-                Videos
-              </Link>
-            </li>
-            <li>
-              <Link to="/book" className="hover:text-accent">
-                Book a Session
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="hover:text-accent">
-                Contact
-              </Link>
-            </li>
+            <li><Link to="/life-story" className="hover:text-accent">Life Story</Link></li>
+            <li><Link to="/achievements" className="hover:text-accent">Achievements</Link></li>
+            <li><Link to="/gallery" className="hover:text-accent">Gallery</Link></li>
+            <li><Link to="/videos" className="hover:text-accent">Videos</Link></li>
+            <li><Link to="/book" className="hover:text-accent">Book a Session</Link></li>
+            <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>
           </ul>
         </div>
         <div>
