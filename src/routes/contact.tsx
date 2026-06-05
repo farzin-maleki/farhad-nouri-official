@@ -19,18 +19,19 @@ export const Route = createFileRoute("/contact")({
 });
 
 function Contact() {
-  const formRef = useRef();
-  const [status, setStatus] = useState("idle");
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!formRef.current) return;
     setStatus("sending");
 
     emailjs
       .sendForm("service_0cwl32a", "template_im24h2g", formRef.current, "Z8axz6ldj_pdHR2Zc")
       .then(() => {
         setStatus("success");
-        formRef.current.reset();
+        formRef.current?.reset();
       })
       .catch(() => {
         setStatus("error");
@@ -50,7 +51,6 @@ function Contact() {
 
       <section className="px-6 pb-28">
         <div className="mx-auto max-w-5xl grid gap-12 md:grid-cols-5">
-          {/* Form */}
           <form ref={formRef} onSubmit={handleSubmit} className="md:col-span-3 space-y-6">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
@@ -118,7 +118,6 @@ function Contact() {
             )}
           </form>
 
-          {/* Side info */}
           <aside className="md:col-span-2 space-y-8">
             <div className="border border-border bg-card p-8">
               <MapPin className="h-6 w-6 text-accent mb-4" />
