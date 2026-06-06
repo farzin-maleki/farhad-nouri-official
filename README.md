@@ -21,6 +21,8 @@
 - **Videos** — YouTube match highlights and training videos
 - **Book a Session** — Cal.com integration for 1-on-1 wrestling and fitness sessions
 - **Contact** — EmailJS-powered contact form
+- **Payments** — Stripe integration for secure session payments
+- **Automation** — Make.com workflows for booking and notification automation
 
 ---
 
