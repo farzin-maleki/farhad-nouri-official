@@ -40,6 +40,8 @@
 | [Radix UI](https://www.radix-ui.com) | Accessible UI primitives |
 | [Lucide React](https://lucide.dev) | Icons |
 | [Vercel](https://vercel.com) | Hosting & deployment |
+| [Make.com](https://make.com) | Automation & workflows |
+| [Stripe](https://stripe.com) | Payment processing |
 
 ---
 
