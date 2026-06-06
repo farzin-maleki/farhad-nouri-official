@@ -8,7 +8,7 @@
 
 ## 📸 Preview
 
-![Farhad Nouri Website](public/preview.jpg)
+
 
 ---
 
