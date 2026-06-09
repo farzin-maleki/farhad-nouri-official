@@ -39,7 +39,7 @@ const offers = [
 const faqs = [
   {
     q: "Where do sessions take place?",
-    a: "In-person sessions take place at my training facility in Tehran. Online video coaching is also available worldwide.",
+    a: "Wrestling coaching sessions are held at the Zex Wrestling Club. Fitness training is available either at the club or at a location that suits you best.",
   },
   {
     q: "Do I need experience?",
@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: "What should I bring?",
-    a: "Training clothes, wrestling shoes if you have them, water and a notebook. Everything else is provided.",
+    a: "Training clothes, wrestling shoes if you have them and water. Everything else is provided.",
   },
   {
     q: "Can I book a package?",
