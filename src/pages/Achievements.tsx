@@ -36,8 +36,22 @@ const items: Item[] = [
   },
   {
     category: "wrestling",
+    year: 2025,
+    comp: "English Senior Wrestling Championships",
+    position: "gold",
+    location: "UK",
+  },
+  {
+    category: "wrestling",
     year: 2024,
     comp: "British Senior Wrestling Championships",
+    position: "gold",
+    location: "Manchester, England",
+  },
+  {
+    category: "wrestling",
+    year: 2024,
+    comp: "English Senior Wrestling Championships",
     position: "gold",
     location: "Manchester, England",
   },
@@ -50,10 +64,60 @@ const items: Item[] = [
   },
   {
     category: "wrestling",
+    year: 2023,
+    comp: "English Senior Wrestling Champion",
+    position: "gold",
+    location: "UK",
+  },
+  {
+    category: "wrestling",
+    year: 2022,
+    comp: "British Senior Wrestling Champion",
+    position: "gold",
+    location: "UK",
+  },
+  {
+    category: "wrestling",
     year: 2022,
     comp: "English Senior Wrestling Champion",
     position: "gold",
     location: "UK",
+  },
+
+  {
+    category: "wrestling",
+    year: 2022,
+    comp: "Takhti Cup",
+    position: "silver",
+    location: "Tehran, Iran",
+  },
+  {
+    category: "wrestling",
+    year: 2019,
+    comp: "World Club Championships – Azad University Team",
+    position: "silver",
+    location: "Kermanshah, Iran",
+  },
+  {
+    category: "wrestling",
+    year: 2019,
+    comp: "Iran Senior Championship",
+    position: "gold",
+    location: "Kermanshah, Iran",
+  },
+  {
+    category: "wrestling",
+    year: 2016,
+    comp: "Iran Junior Championship",
+    position: "gold",
+    location: "Tehran, Iran",
+  },
+  {
+    category: "wrestling",
+    year: 2012,
+    comp: "Iran Youth Championship",
+    position: "gold",
+    location: "Tehran, Iran",
   },
 ];
 

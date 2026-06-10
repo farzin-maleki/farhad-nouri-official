@@ -1,4 +1,4 @@
-import { Dumbbell, Swords, Check, ArrowRight } from "lucide-react";
+import { Dumbbell, Swords, Check, ArrowRight, Tag } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useEffect, useState } from "react";
@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     q: "Can I book a package?",
-    a: "Yes. Discounts apply on packs of 5 and 10 sessions. Mention it when booking.",
+    a: `Yes. Discounts apply on packs of 5 and 10 sessions. To get a package deal, head to the Contact section of the website and send a message with the subject "Book a Package" — we'll get back to you with the details.`,
   },
   {
     q: "What's your cancellation policy?",
@@ -143,6 +143,30 @@ export default function Book() {
               </p>
             </div>
           ))}
+        </div>
+        <div className="mx-auto max-w-6xl mt-6 border border-accent/40 border-l-4 border-l-accent bg-card/50 rounded-md px-8 py-6 flex items-start gap-5">
+          <Tag className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+          <div>
+            <p className="text-base font-semibold text-foreground mb-1">
+              Save with a session package
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Book{" "}
+              <span className="text-foreground font-medium">
+                5 or 10 sessions
+              </span>{" "}
+              and get a discount. Head to the{" "}
+              <a
+                href="/contact?subject=Book a Package"
+                className="text-accent underline underline-offset-2 hover:text-accent/80 transition-colors font-medium"
+              >
+                Contact section
+              </a>{" "}
+              and send a message with the subject{" "}
+              <span className="text-accent font-medium">"Get a Package"</span> —
+              we'll get back to you with the deal.
+            </p>
+          </div>
         </div>
       </section>
 
