@@ -11,6 +11,7 @@ import redFist from "@/assets/gallery/red-fist.jpg";
 import tirana from "@/assets/gallery/tirana-win.jpg";
 import armRaised from "@/assets/gallery/arm-raised.jpg";
 import miror from "@/assets/gallery/IMG_0517.png";
+import photoTHe from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.21.5ss1.jpeg";
 
 type Photo = { src: string; alt: string; cat: "wrestling" | "fitness" };
 
@@ -28,6 +29,7 @@ const photos: Photo[] = [
   },
   { src: mirror, alt: "Physique check", cat: "fitness" },
   { src: miror, alt: "Physique check", cat: "fitness" },
+  { src: photoTHe, alt: "wrestling", cat: "wrestling" },
 ];
 
 export default function Gallery() {
