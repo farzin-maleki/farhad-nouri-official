@@ -2,9 +2,14 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import kidPic from "@/assets/gallery/WhatsApp Image 2026-05-29 at 15.03.06.jpeg";
 import portrait from "@/assets/hero-mat.jpg";
-import action from "@/assets/hero-mat.jpg";
 import fitnessHero from "@/assets/hero-mat.jpg";
 import wrestlerSpotlight from "@/assets/gallery/image_2026-05-27_13-54-58.png";
+import teenPic from "@/assets/gallery/teenager.jpeg";
+import worldCup from "@/assets/gallery/worldcup.jpeg";
+import today from "@/assets/gallery/today.jpeg";
+import javanan from "@/assets/gallery/javanan.jpeg";
+import asiaii from "@/assets/gallery/asiaii.jpeg";
+import European from "@/assets/gallery/arm-raised.jpg";
 
 const timeline = [
   {
@@ -17,19 +22,25 @@ const timeline = [
     year: "2012",
     title: "National Youth Champion",
     text: "Won the Iran Youth Championship in Tehran — the first national title that proved the dream was real.",
-    img: portrait,
+    img: teenPic,
   },
   {
     year: "2016",
     title: "National Junior Champion",
     text: "Claimed the Iran Junior Championship in Tehran, cementing a place among the country's elite young wrestlers.",
-    img: action,
+    img: javanan,
   },
   {
     year: "2019",
     title: "National Senior Champion",
     text: "Won the Iran Senior Championship in Kermanshah — the pinnacle of domestic competition. Also earned a runner-up finish with Azad University at the World Club Championships, held in Kermanshah.",
-    img: wrestlerSpotlight,
+    img: asiaii,
+  },
+  {
+    year: "2020",
+    title: "World Club Championships — Bronze",
+    text: "Represented Setaregan Sari at the World Club Championships in Sari, bringing home a bronze medal.",
+    img: worldCup,
   },
   {
     year: "2022",
@@ -37,14 +48,16 @@ const timeline = [
     text: "Competed at the prestigious Takhti Cup in Tehran, finishing with a silver medal on the international stage.",
   },
   {
-    year: "2023",
-    title: "World Club Championships — Bronze",
-    text: "Represented Setaregan Sari at the World Club Championships in Sari, bringing home a bronze medal.",
+    year: "2026",
+    title: "European Senior Championship",
+    text: "Stepped onto the European stage and earned a bronze medal, competing against the continent's elite senior wrestlers.",
+    img: European,
   },
   {
     year: "Today",
     title: "Building a Legacy",
     text: "Still competing. Still pushing limits. Bridging the world of wrestling with fitness and inspiring the next generation — every single day.",
+    img: today,
   },
 ];
 
