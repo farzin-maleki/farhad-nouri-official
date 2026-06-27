@@ -50,7 +50,7 @@ export function SiteFooter() {
           <p style={{ color: "oklch(0.7 0.015 80)", fontSize: "13px", marginTop: "0.75rem" }}>
             Designed & Built by
             <a
-              href="https://farzin-maleki.github.io/Farzin-portfolio/"
+              href="https://www.farzin-maleki.com"
               style={{ marginLeft: "5px", color: "#22e3d6", fontWeight: "600", fontSize: "15px" }}
             >
               Farzin
