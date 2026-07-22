@@ -2,16 +2,16 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import zagrebMat from "@/assets/gallery/zagreb-mat.png";
-import zagrebWin from "@/assets/gallery/zagreb-win.png";
-import mirror from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.12.19ss.jpeg";
-import blueWin from "@/assets/gallery/blue-win-ukraine.jpg";
-import diploma from "@/assets/gallery/euro-diploma.jpg";
-import redFist from "@/assets/gallery/red-fist.jpg";
-import tirana from "@/assets/gallery/tirana-win.jpg";
-import armRaised from "@/assets/gallery/arm-raised.jpg";
-import miror from "@/assets/gallery/IMG_0517.png";
-import photoTHe from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.21.5ss1.jpeg";
+import zagrebMat from "@/assets/gallery/zagreb-mat.webp";
+import zagrebWin from "@/assets/gallery/zagreb-win.webp";
+import mirror from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.12.19ss.webp";
+import blueWin from "@/assets/gallery/blue-win-ukraine.webp";
+import diploma from "@/assets/gallery/euro-diploma.webp";
+import redFist from "@/assets/gallery/red-fist.webp";
+import tirana from "@/assets/gallery/tirana-win.webp";
+import armRaised from "@/assets/gallery/arm-raised.webp";
+import miror from "@/assets/gallery/IMG_0517.webp";
+import photoTHe from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.21.5ss1.webp";
 
 type Photo = { src: string; alt: string; cat: "wrestling" | "fitness" };
 
