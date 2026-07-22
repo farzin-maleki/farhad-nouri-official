@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Trophy, Image as ImageIcon, Play, Dumbbell, Calendar, BookOpen } from "lucide-react";
 import heroMat from "@/assets/hero-mat.jpg";
-import portrait from "@/assets/gallery/arm-raised.jpg";
-import action from "@/assets/gallery/euro-diploma.jpg";
-import contactPre from "@/assets/gallery/blue-win-ukraine.jpg";
-import galleryPre from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.12.19.jpeg";
-import videosPre from "@/assets/gallery/tirana-win.jpg";
-import bookingPre from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.12.19ss.jpeg";
-import fitnessHero from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.21.5ss1.jpeg";
+import portrait from "@/assets/gallery/arm-raised.webp";
+import action from "@/assets/gallery/euro-diploma.webp";
+import contactPre from "@/assets/gallery/blue-win-ukraine.webp";
+import galleryPre from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.12.19.webp";
+import videosPre from "@/assets/gallery/tirana-win.webp";
+import bookingPre from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.12.19ss.webp";
+import fitnessHero from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.21.5ss1.webp";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 
