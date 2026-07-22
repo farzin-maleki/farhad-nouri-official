@@ -1,15 +1,15 @@
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import kidPic from "@/assets/gallery/WhatsApp Image 2026-05-29 at 15.03.06.jpeg";
+import kidPic from "@/assets/gallery/WhatsApp Image 2026-05-29 at 15.03.06.webp";
 import portrait from "@/assets/hero-mat.jpg";
 import fitnessHero from "@/assets/hero-mat.jpg";
-import wrestlerSpotlight from "@/assets/gallery/image_2026-05-27_13-54-58.png";
-import teenPic from "@/assets/gallery/teenager.jpeg";
-import worldCup from "@/assets/gallery/worldcup.jpeg";
-import today from "@/assets/gallery/today.jpeg";
-import javanan from "@/assets/gallery/javanan.jpeg";
-import asiaii from "@/assets/gallery/asiaii.jpeg";
-import European from "@/assets/gallery/arm-raised.jpg";
+import wrestlerSpotlight from "@/assets/gallery/image_2026-05-27_13-54-58.webp";
+import teenPic from "@/assets/gallery/teenager.webp";
+import worldCup from "@/assets/gallery/worldcup.webp";
+import today from "@/assets/gallery/today.webp";
+import javanan from "@/assets/gallery/javanan.webp";
+import asiaii from "@/assets/gallery/asiaii.webp";
+import European from "@/assets/gallery/arm-raised.webp";
 
 const timeline = [
   {
