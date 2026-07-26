@@ -12,6 +12,9 @@ import tirana from "@/assets/gallery/tirana-win.webp";
 import armRaised from "@/assets/gallery/arm-raised.webp";
 import miror from "@/assets/gallery/IMG_0517.webp";
 import photoTHe from "@/assets/gallery/WhatsApp Image 2026-05-29 at 09.21.5ss1.webp";
+import newPhoto1 from "@/assets/gallery/newPhoto1.webp";
+import newPhoto2 from "@/assets/gallery/newPhoto2.webp";
+import newPhoto3 from "@/assets/gallery/newPhoto3.webp";
 
 type Photo = { src: string; alt: string; cat: "wrestling" | "fitness" };
 
@@ -30,6 +33,9 @@ const photos: Photo[] = [
   { src: mirror, alt: "Physique check", cat: "fitness" },
   { src: miror, alt: "Physique check", cat: "fitness" },
   { src: photoTHe, alt: "wrestling", cat: "wrestling" },
+  { src: newPhoto1, alt: "wrestling", cat: "wrestling" },
+  { src: newPhoto2, alt: "wrestling", cat: "wrestling" },
+  { src: newPhoto3, alt: "wrestling", cat: "wrestling" },
 ];
 
 export default function Gallery() {
