@@ -6,12 +6,6 @@
 
 ---
 
-## 📸 Preview
-
-
-
----
-
 ## ✨ Features
 
 - **Home** — Hero section, stats, and page previews
@@ -115,7 +109,7 @@ The site is deployed on **Vercel** with automatic deployments on every push to `
 
 ## 👨‍💻 Developer
 
-Designed & built by [Farzin Maleki](https://farzin-maleki.github.io/Farzin-portfolio/) — Freelance Web Developer based in London, UK.
+Designed & built by [Farzin Maleki](https://www.farzin-maleki.com) — Freelance Web Developer based in London, UK.
 
 ---
 
